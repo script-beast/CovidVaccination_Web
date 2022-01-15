@@ -1,0 +1,41 @@
+<% layout('/layouts/boilerplate') -%>
+    <div style="height: 40vh;"></div>
+    <div class="row mb-3 mx-3">
+        <div class="col-md-1"></div>
+        <div class="col-md-6 mb-3">
+            <div class="bg-dark">
+                <canvas id="UserChart"></canvas>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-4 bg-transparent mb-3" >
+            <div class="bg-info ">
+                <h3 class="text-center">User Vacination</h3>
+            </div>
+            <marquee behavior="scroll" direction="up" scrollamount="5" style="height: 42vh;">
+                <% for(let dt of data ) {%>
+                    <div class="card mb-2 bg-<%=dt.dose2 ? "success" : dt.dose1 ? "warning" : "danger" %>">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= dt.name %>
+                            </h5>
+                            <h6 class="card-subtitle mb-2 text-white">
+                                --<%= dt.district %>, <%= dt.state %>
+                            </h6>
+                            <p class="card-text">
+                                <%= dt.dose1 ? "Had" : "Havn't" %> took Dose 1<br>
+                                    <%= dt.dose2 ? "Had" : "Havn't" %> took Dose 2
+                            </p>
+                        </div>
+                    </div>
+                    <% } %>
+            </marquee>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+     const nvv = <%= nv %> 
+     const hvv = <%= hv%> 
+     const fvv =  <%=fv%>
+    </script>
+    <script src="/javascr/userchart.js"></script>

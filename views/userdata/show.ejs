@@ -1,0 +1,32 @@
+<% layout('/layouts/boilerplate') -%>
+    <div class="row">
+        <div class="col-md-4 offset-md-4 text-white mt-auto bg-<%=usdata.dose2 ? "success" : usdata.dose1 ? "warning"
+            : "danger" %>">
+            <div class="card my-2 bg-dark">
+                <img src="https://images.unsplash.com/photo-1585222515068-7201a72c4181?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                    class="card-img-top" alt="...">
+                <div class="card-body text-white">
+                    <h5 class="card-title">
+                        <%=usdata.name %>
+                    </h5>
+                </div>
+                <ul class="list-group list-group-flush bg-dark text-white">
+                    <li class="list-group-item bg-dark text-white">
+                        Adress: <%= usdata.district %>, <%= usdata.state %><br>
+                                Pin: <%= usdata.pin %>
+                    </li>
+                    <li class="list-group-item bg-dark text-white">
+                        <%= usdata.dose1 ? "Had" : "Havn't" %> took Dose 1<br>
+                            <%= usdata.dose2 ? "Had" : "Havn't" %> took Dose 2
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <div class="d-grid gap-2 mx-3">
+                        <a href="<%=usdata._id%>/edit" class="btn btn-warning card-link">Edit</a>
+                        <form class='' action="<%=usdata._id%>?_method=DELETE" method="post">
+                            <div class="d-grid gap-2"><button class="btn btn-danger">Delete</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>

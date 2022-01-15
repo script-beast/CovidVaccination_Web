@@ -1,0 +1,75 @@
+<% layout('/layouts/boilerplate') -%>
+    <div class="row">
+        <h1 class="col-6 offset-3 text-center ">Register Details</h1>
+        <div class="col-md-6 offset-md-3">
+            <form action="/register" method="post" class="needs-validation" novalidate>
+                <div class="mb-2">
+                    <label class="form-label" for="username"> UserName </label>
+                    <input type="text" class="form-control" id="username" name="UserData[username]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <label class="form-label" for="password"> Password </label>
+                    <input type="text" class="form-control" id="password" name="UserData[password]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <label class="form-label" for="name"> Name </label>
+                    <input type="text" class="form-control" id="name" name="UserData[name]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <label class="form-label" for="district"> District </label>
+                    <input type="text" class="form-control" id="district" name="UserData[district]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <label class="form-label" for="state"> State </label>
+                    <input type="text" class="form-control" id="state" name="UserData[state]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <label class="form-label" for="pin"> Pincode </label>
+                    <input type="number" class="form-control" id="pin" name="UserData[pin]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <input  type="checkbox" id="dose1" name="UserData[dose1]">
+                    <label class="form-check-label" for="dose1"> Had Dose 1 </label>
+                </div>
+                <div class="mb-2">
+                    <input  type="checkbox" id="dose2" name="UserData[dose2]" disabled>
+                    <label class="form-check-label" for="dose2"> Had Dose 2 </label>
+                </div>
+                <div class="mb-2">
+                    <button class="btn btn-warning">Update Details</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        var checker = document.getElementById('dose1');
+        var sendbtn = document.getElementById('dose2');
+        // when unchecked or checked, run the function
+        checker.onchange = function () {
+            if (this.checked) {
+                sendbtn.disabled = false;
+            } else {
+                sendbtn.disabled = true;
+                sendbtn.checked = false
+            }
+        }
+    </script>

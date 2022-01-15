@@ -1,0 +1,16 @@
+<% layout('/layouts/boilerplate') -%>
+<link rel="stylesheet" href="/stylesheets/style.css">
+<!-- <div class="row"> -->
+<!-- <div class="col-md-6 mb-3" style="height: 80vh;"> -->
+    <div class="bg-dark reducechart" >
+        <canvas  id="statsChart"></canvas>
+    </div>
+<!-- </div> -->
+<!-- </div> -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const nvv = <%= nv %> 
+    const hvv = <%= hv%> 
+    const fvv =  <%=fv%>
+   </script>
+<script src="/javascr/statsChart.js"></script>
